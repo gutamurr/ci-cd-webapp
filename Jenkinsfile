@@ -11,8 +11,9 @@ pipeline {
 		stage("Build & Run") {
 			steps {
 				script {
-					cd "web-app"
-					sh "docker compose up -d --build"
+					dir("web-app") {
+						sh "docker compose up -d --build --force-recreate"
+					}
 				}
 			}
 		}
@@ -20,7 +21,10 @@ pipeline {
 		stage("Test") {
 			steps {
 				script {
-					sh "curl -f http://localhost:8080/health"
+					sh '''
+						echo "Health response:"
+						curl -f http://localhost:8080/health
+					'''
 				}
 			}
 		}
