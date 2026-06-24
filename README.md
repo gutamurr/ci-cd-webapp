@@ -1,4 +1,4 @@
-## 📃 Pet-project to understand how CI/CD pipelines work.  
+## 📃 Pet-project to understand how Docker, Jenkins and CI/CD pipelines work.  
 #### Run Jenkins container:
 ```bash
 docker run -d -p 8000:8080 \
