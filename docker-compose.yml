@@ -1,18 +1,7 @@
-name: jenkins-docker
+name: flask
 services:
-  jenkins:
+  web-app:
     build: .
-    image: gutamurr/jenkins-docker:lts
-    container_name: jenkins
-
-    user: root
-
+    container_name: webapp-container
     ports:
-      - "8000:8080"
-
-    environment:
-      - CASC_JENKINS_CONFIG=/var/jenkins_home/casc
-
-    volumes:
-      - /jenkins_home:/var/jenkins_home
-      - /var/run/docker.sock:/var/run/docker.sock
+      - "5000:5000"
