@@ -2,7 +2,7 @@ name: jenkins-docker
 services:
   jenkins:
     build: .
-    image: jenkins-docker:lts
+    image: gutamurr/jenkins-docker:lts
     container_name: jenkins
 
     user: root
