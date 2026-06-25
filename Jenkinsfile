@@ -11,11 +11,10 @@ pipeline {
 		stage("Build & Run") {
 			steps {
 				script {
-					dir("web-app") {
-						sh '''
-							docker compose down --remove-orphans || true
-							docker compose up -d --build --force-recreate
-						'''
+					sh '''
+						docker compose down --remove-orphans || true
+						docker compose up -d --build --force-recreate
+					'''
 					}
 				}
 			}
