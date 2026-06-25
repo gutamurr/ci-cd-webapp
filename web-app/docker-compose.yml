@@ -1,7 +1,0 @@
-name: flask
-services:
-  web-app:
-    build: .
-    container_name: webapp-container
-    ports:
-      - "5000:5000"
